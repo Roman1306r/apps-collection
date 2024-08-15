@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+:root {
+  --index: calc(1vw + 1vh);
+  --color: #00deae;
+  --second-color: #333;
+  --second--lightcolor: #ffffff;
+  --active-color: #008568;
+}
+h1 {
+  font-size: calc(var(--index) * 1.5);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+a {text-decoration: none; color: inherit;}
+
+body {
+  font-family: "Titillium Web", sans-serif;
+  color: var(--color);
+}
+

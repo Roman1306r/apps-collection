@@ -1,0 +1,792 @@
+.App {
+  text-align: center;
+  background: var(--second-color);
+  min-height: 100vh;
+  transition: all 0.3s ease 0s;
+  padding-bottom: 50px;
+  &.light {
+      background-color: white;
+      color: var(--active-color);
+      .header {
+        border-bottom: 1px solid var(--active-color);
+        & nav {
+          & .header__link {
+            color: black;
+            &.active {
+              color: var(--active-color);
+              text-decoration-color: var(--active-color);
+            }
+          }
+        }
+      }
+      .todolist {
+        .todos {
+          .todos-info {
+              & .MuiButtonBase-root:not(.Mui-disabled) {
+                background-color: var(--active-color);
+                color: white;
+                border-color: var(--active-color);
+                border-right-color: white;
+              }
+          }
+          .todo {   
+            .todo__form {
+              .todo__form-input *{
+                  color: var(--active-color);
+                  border-color: var(--active-color) !important;   
+                  &::after, &::before {
+                    border-color: var(--active-color);   
+                  }   
+              }
+              .todo__form-btn {
+                border-color: var(--active-color); 
+              } 
+            }
+            .todo__body {
+              color: black;
+              border-bottom: 1px solid var(--active-color);
+              & > div {
+                & .icon {
+                  &:hover {
+                      color: var(--active-color);
+                  }
+                }
+              }
+            } 
+          }
+          
+        }
+        .todolist__form {
+          border-bottom: 1px dashed var(--active-color);
+          .todolist__form-input *{
+              color: var(--active-color); 
+              border-color: var(--active-color) !important;   
+              &::after, &::before {
+                border-color: var(--active-color);   
+              }   
+          }
+          .todolist__form-btn {
+            border-color: var(--active-color); 
+          } 
+        }
+      }
+      .password {
+        & .MuiAccordion-root, & .MuiSvgIcon-root{
+          color: var(--active-color) !important;
+          background-color: white; 
+        }
+        & .MuiSlider-root, & .MuiCheckbox-root > *, & .MuiButton-root {
+          color: var(--active-color);
+          border-color: var(--active-color);
+        }
+        .password__more {
+          .password__more-title {
+            text-align: left;
+            .password__titlespan {
+                color: var(--active-color);
+            }
+          }
+        }
+        .password__container {
+            .password__settings {
+                color: var(--active-color); 
+                .password__lenght {
+                    .password__lenght-label {
+                      & .lenghtEl {
+                        color: var(--active-color);
+                      }
+                    }
+                }
+            }
+            .password__result {
+              .password__res {  
+                .password__title {
+                  font-size: calc(var(--index) * 2);
+                    background-image: linear-gradient(
+                            -225deg,
+                            var(--color) 0%,
+                            var(--active-color) 29%,
+                            var(--color) 67%,
+                            var(--color) 100%
+                    );
+                    color: var(--active-color);
+                }
+              }
+            }
+        }
+        }
+        .bmi {
+          .bmi__info {
+            & .MuiTable-root *, & .MuiAccordion-root, & .MuiSvgIcon-root{
+              color: var(--active-color) !important;
+              background-color: white; 
+            }
+          }
+          .bmi__result {
+            border: 1px solid var(--active-color);
+            & span{
+              color: var(--active-color);
+            }
+            & h2 {
+              color: var(--active-color);
+            }
+            & h3 {
+              color: var(--active-color); 
+            }
+          }
+          .bmi__form {
+            & .MuiButton-root {
+              background-color: var(--active-color);
+            }
+            .bmi__form-cont {
+              & label{
+                  color: var(--active-color);
+                  & input {
+                    border: 1px solid var(--active-color);
+                  }
+              }
+            }
+          }
+        }   
+        .timer {
+          .timer__settings {
+            & * {
+              color: var(--active-color);
+              border-color: var(--active-color);
+            }
+            .timer__settings-body {
+              & * {
+                  color: var(--active-color);
+                  border-color: var(--active-color);
+              }
+            }
+          }
+          .timer__body {
+            & .MuiButton-root {
+              color: var(--active-color);
+              border-color: var(--active-color);
+            }
+          }
+        }
+        .tic-tac {
+          color: var(--active-color);
+          .tic-tac_info {
+            & * {
+              color: var(--active-color);
+              border-color: var(--active-color);
+            } 
+          }
+          .tic-tac_field {
+            & .reset {
+              color: var(--active-color);
+              border-color: var(--active-color);
+            }
+            table {
+              & td {
+                &:hover {
+                  border: 1px solid var(--active-color);
+                }
+              }
+            }
+            .cell {
+              color: var(--active-color);
+            }
+          } 
+        }  
+    }
+}
+
+
+
+.header{
+  display: flex;
+  margin: 0px;
+  text-align: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--color);
+  padding: 20px calc(var(--index) * 4);
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  justify-content: space-between;
+  & nav {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: calc(var(--index) * 0.5);
+      & .header__link {
+        color: white;
+        font-size: calc(var(--index) * 0.8);
+        padding: 5px 10px;
+        transition: all 0.2s ease-in-out;
+        &.active {
+            text-decoration: underline;
+            color: var(--color);
+            text-decoration-color: var(--color);
+        }
+      }   
+  }
+}
+
+
+
+
+.main {
+  min-height: 100vh;
+  padding: 100px 10px;
+  max-width: 1300px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; 
+}
+
+.todolist {
+  text-align: left;
+  margin: 0px calc(var(--index) * 5);
+  .todos {
+    font-size: calc(var(--index) * 1.3);
+    .todos-info {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 30px;
+        text-align: center;
+        & .MuiButtonBase-root:not(.Mui-disabled) {
+          background-color: var(--color);
+          color: black;
+          border-color: var(--color);
+          border-right-color: black;
+        }
+    }
+    .todo {   
+      margin-bottom: 20px;
+      .todo__form {
+        display: flex;
+        gap: calc(var(--index) * 5);
+        padding: 10px 50px;
+        .todo__form-input *{
+            color: var(--color);
+            font-size: calc(var(--index) * 1);
+            border-color: var(--color) !important;   
+            &::after, &::before {
+              border-color: var(--color);   
+            }   
+        }
+        .todo__form-btn {
+          border-color: var(--color); 
+        } 
+      }
+      .todo__body {
+        display: flex;
+        color: white;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid var(--color);
+        padding: 10px;
+        margin-bottom: 10px;
+        &.completed {
+          text-decoration: line-through;
+          opacity: 0.6;
+          border-bottom: 1px solid grey;
+        }
+        & > div {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 10px;
+          & .icon {
+            cursor: pointer;
+            &:hover {
+                color: var(--color);
+            }
+          }
+        }
+      } 
+    }
+    
+  }
+  .todolist__form {
+    display: flex;
+    gap: calc(var(--index) * 5);
+    border-bottom: 1px dashed var(--color);
+    padding: 50px 0;
+    margin-bottom: 40px;
+    
+    .todolist__form-input *{
+        color: var(--color);
+        font-size: calc(var(--index) * 1);
+        border-color: var(--color) !important;   
+        &::after, &::before {
+          border-color: var(--color);   
+        }   
+    }
+    .todolist__form-btn {
+      border-color: var(--color); 
+    } 
+  }
+}
+
+
+
+
+.errorpage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: calc(var(--index) * 2);
+}
+
+
+@keyframes anim {
+  100% {transform: rotate(360deg)}
+}
+
+
+
+
+.password {
+    margin: 0px calc(var(--index) * 5);
+    & h1 {
+      margin-bottom: 0px;
+      text-align: left;
+    }
+    & .MuiAccordion-root, & .MuiSvgIcon-root{
+      color: var(--color) !important;
+      background-color: var(--second-color); 
+    }
+    & .MuiSlider-root, & .MuiCheckbox-root > *, & .MuiButton-root {
+      color: var(--color);
+      border-color: var(--color);
+    }
+    .password__more {
+      margin-top: 50px;
+      .password__more-title {
+        text-align: left;
+        .password__titlespan {
+            font-size: calc(var(--index) * 0.8);
+            color: white;
+            text-decoration: underline;
+        }
+      }
+      .password__array {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+      }
+    }
+    .password__container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+        .password__settings {
+            padding: 20px;
+            flex: 0 0 30%; 
+            text-align: left; 
+            color: white; 
+            .password__lenght {
+                white-space: nowrap;
+                margin: 10px 0;
+                cursor: pointer;
+                .password__lenght-label {
+                  display: block;
+                  & .lenghtEl {
+                    color: var(--color);
+                  }
+                }
+            }
+            .password__lenghtcheckbox {
+              margin: 20px 0;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+            }
+        }
+        .password__result {
+          flex: 1 0 70%;
+          .password__res {
+            margin-top: 50px;
+            padding: 20px;
+            .password__title {
+              font-size: calc(var(--index) * 2);
+                background-image: linear-gradient(
+                        -225deg,
+                        var(--color) 0%,
+                        white 29%,
+                        var(--color) 67%,
+                        var(--color) 100%
+                );
+                background-size: auto auto;
+                background-clip: border-box;
+                background-size: 200% auto;
+                color: #fff;
+                background-clip: text;
+                text-fill-color: transparent;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: textclip 3s linear infinite;
+            }
+          }
+        }
+    }
+  }
+
+@keyframes textclip {
+  to {
+      background-position: 200% center;
+  }
+}
+
+
+
+
+.bmi {
+  margin: 0px calc(var(--index) * 5);
+  & h1 {
+    margin-bottom: 20px;
+    text-align: left;  
+  }
+  .bmi__info {
+    margin-top: 50px;
+    text-align: left;
+    & h2 {
+      padding: calc(var(--index) * 0.2);
+    }
+    & .MuiTable-root *, & .MuiAccordion-root, & .MuiSvgIcon-root{
+      color: var(--color) !important;
+      background-color: var(--second-color); 
+    }
+  }
+  .bmi__result {
+    border-radius: 2px;
+    border: 1px solid var(--color);
+    padding: calc(var(--index) * 1);
+    margin: 50px auto;
+    text-align: left;
+    text-transform: uppercase;
+    
+    & span{
+      color: var(--color);
+    }
+    & h2 {
+      font-size: calc(var(--index) * 2);
+      color: white;
+    }
+    & h3 {
+      margin-top: 20px;
+      color: white; 
+    }
+  }
+  
+  .bmi__form {
+    text-align: left;
+    & .MuiButton-root {
+      background-color: var(--color);
+      & * {
+        font-size: calc(var(--index) * 1.5);
+      }
+    }
+    .bmi__form-cont {
+      margin: calc(var(--index) * 0.5) 0;
+      & label{
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          font-size: calc(var(--index) * 1);
+          justify-content: space-between;
+          color: white;
+          white-space: nowrap;
+          & input {
+            width: 20%;
+            height: 50px;
+            font-size: calc(var(--index) * 1);
+            color: inherit;
+            background-color: transparent;
+            border-radius: 2px;
+            padding: 0px 20px;
+            border: 1px solid var(--color);
+          }
+      }
+
+    }
+
+  }
+}
+
+
+
+
+
+.timer {
+  margin: 0px calc(var(--index) * 5);
+  text-align: left;
+  .timer__settings {
+    & * {
+      color: white;
+      border-color: white;
+    }
+    .timer__settings-body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin: calc(var(--index) * 3) auto;
+      & * {
+          color: var(--color);
+          border-color: var(--color);
+      }
+      & .select {
+        flex: 0 0 30%;
+      }
+    }
+  }
+  .timer__body {
+    width: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+    & .MuiButton-root {
+      color: var(--color);
+      border-color: var(--color);
+    }
+    & .progress {
+      user-select: none;
+    }
+  }
+}
+
+
+
+
+.calculator {
+  margin: 0px calc(var(--index) * 5);
+  & > div {
+    margin: 0 auto;
+    border: 1px solid grey;
+  }
+}
+
+
+
+.tic-tac {
+  margin: 0px calc(var(--index) * 5);
+  text-align: left;
+  color: white;
+  .tic-tac_info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    & * {
+      color: var(--color);
+      border-color: var(--color);
+    }
+    .tic-tac_random button:disabled {
+      opacity: 0.5;
+    }
+    & .motion {
+      font-size: calc(var(--index) * 3);
+    }
+    & > div {
+      display: flex;
+      justify-content: center;
+      flex: 0 0 33.333% ;
+    }
+    
+  }
+  .tic-tac_field {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    & .reset {
+      color: var(--color);
+      border-color: var(--color);
+    }
+    table {
+      border-radius: 5px;
+      & td {
+        border: 1px solid grey;
+        width: 100px;
+        height: 100px;
+        &:hover {
+          border: 1px solid var(--color);
+        }
+      }
+    }
+    .cell {
+      cursor: pointer;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 80px;
+      color: var(--color);
+      &.lock {
+        pointer-events: none;
+      }
+    }
+  }
+  
+}
+
+
+@media (max-width: 1030px){
+  .header{
+      padding: 20px calc(var(--index) * 2);
+  }
+  .main {
+      padding: 100px 10px;
+  }
+  .todolist {
+    margin: 0px calc(var(--index) * 0.5);
+    .todos { 
+      .todo {   
+        margin-bottom: 20px;
+        .todo__form {
+          gap: calc(var(--index) * 0.5); 
+        }  
+      }  
+    }
+    .todolist__form {
+      gap: calc(var(--index) * 0.5);
+      padding: 30px 0;
+    }
+  }
+  .password {
+    margin: 0px calc(var(--index) *0.5);    
+    .password__container {
+        .password__result {
+          .password__res {
+            .password__title {
+                font-size: calc(var(--index) * 1.5);
+            }
+          }
+        }
+    }
+  }
+  .bmi {
+    margin: 0px calc(var(--index) * 0.5);
+  }
+  .calculator {
+    margin: 0px calc(var(--index) * 0.5);
+  }
+}
+@media (max-width: 767px){
+  .header{
+    padding: 10px calc(var(--index) * 1);
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    & .MuiFormControlLabel-root {
+      margin: 0;
+    }
+    & nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: calc(var(--index) * 0.5);
+        & .header__link {
+          font-size: calc(var(--index) * 1.5);
+        }   
+    }
+  }
+  .main {
+      padding: 100px 10px;
+  }
+  .password {  
+    .password__more {
+      margin-top: 50px;
+      .password__more-title {
+        font-size: calc(var(--index) * 1.6);
+      }
+      .password__array {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: center;
+          gap: 15px;
+          & .password__item {
+            width: 100%;
+          }
+      }
+    }
+    .password__container {
+        display: block;
+        .password__settings {
+            padding: 10px;
+            flex: 1 0 100%; 
+        }
+        .password__result {
+          .password__res {
+            border: 1px solid var(--color);
+            .password__title {
+                font-size: calc(var(--index) * 1.7);
+            }
+          }
+        }
+    }
+  }
+  .bmi {
+    .bmi__info {
+      & h2 {
+        font-size: calc(var(--index) * 1.5);
+      }
+    }
+    .bmi__form {
+      & .MuiButton-root {
+        & * {
+          font-size: calc(var(--index) * 2);
+        }
+      }
+      .bmi__form-cont {
+        margin: calc(var(--index) * 2) 0;
+        & label{
+            font-size: calc(var(--index) * 1.2);
+            & input {
+              width: 40%;
+              font-size: calc(var(--index) * 1.2);
+            }
+        }
+      }
+    }
+  }
+  .timer {
+    margin: 0px calc(var(--index) * 0.5);
+    .timer__settings {
+      .timer__settings-body {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+    .timer__body {
+      width: 80%;
+    }
+  }
+  .tic-tac {
+    margin: 0px calc(var(--index) * 0.5);
+    .tic-tac_field {
+      table {
+        & td {
+          width: 90px;
+          height: 90px;
+        }
+      }
+      .cell {
+        font-size: 70px;
+      }
+    }
+    
+  }
+}
+
+
+

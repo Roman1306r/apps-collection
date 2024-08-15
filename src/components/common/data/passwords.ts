@@ -1,0 +1,17 @@
+export const passwords: string[] = [
+    'wvOumX%D',
+    'dza$OZzW',
+    '6GKE$$Dd',
+    'pOmW@!$X',
+    '2#@QuYuR',
+    's21eB3!G',
+    'MY$4Quoq',
+    'nwAh$UWL',
+    'F%OJh4kF',
+    'akN41ysW',
+    'fchmtnQx',
+    '9mHgY!fb',
+    'MBLs4X5b',
+    '0q6HHyfR',
+    'hRXX8bx3',
+]
